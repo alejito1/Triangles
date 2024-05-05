@@ -1,6 +1,6 @@
 package triangulitos;
 
-import exceptions.InvalidTriangle;
+import exceptions.InvalidTriangleException;
 import interfaces.Shape;
 
 /**
@@ -17,7 +17,7 @@ public abstract class Triangle implements Shape {
 	 */
 	public Triangle (double side1, double side2, double side3) throws Exception {
 		if (side1 + side2 <= side3 || side1 + side3 <= side2 || side2 + side3 <= side1) {
-			throw new InvalidTriangle("Invalid triangle exception");
+			throw new InvalidTriangleException("Invalid triangle exception");
 		}
 		this.side1=side1;
 		this.side2=side2;

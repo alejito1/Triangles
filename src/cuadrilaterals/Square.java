@@ -1,13 +1,13 @@
 package cuadrilaterals;
 
-import exceptions.SideExcept;
+import exceptions.SideException;
 
 public class Square extends Rectangle {
 	private double edge;
 	public Square (double edge) throws Exception {
 		super (edge, edge);
 		if (edge <= 0){
-			throw new SideExcept ("Cannnot create square, sides are less than zero");
+			throw new SideException ("Cannnot create square, sides are less than zero");
 		}
 		this.edge =edge;
 	}
