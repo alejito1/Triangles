@@ -1,6 +1,7 @@
 package triangulitos;
 
 import exceptions.InvalidTriangleException;
+import exceptions.ScaleException;
 import interfaces.Shape;
 
 /**
@@ -38,7 +39,10 @@ public abstract class Triangle implements Shape {
 	 * scale the sides of the triangle by a factor
 	 * @param scaleFactor > 0m
 	 */
-	public void scale(double scaleFactor){
+	public void scale(double scaleFactor) throws ScaleException{
+		if(scaleFactor <= 0) {
+			throw new ScaleException("the scale factor has to be bigger than 0");
+		}
 		this.side1 = side1*scaleFactor;
 		this.side2 = side2*scaleFactor;
 		this.side3 = side3*scaleFactor;
