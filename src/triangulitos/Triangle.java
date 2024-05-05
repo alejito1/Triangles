@@ -37,7 +37,7 @@ public abstract class Triangle implements Shape {
 	
 	/**
 	 * scale the sides of the triangle by a factor
-	 * @param scaleFactor > 0m
+	 * @param scaleFactor > 0
 	 */
 	public void scale(double scaleFactor) throws ScaleException{
 		if(scaleFactor <= 0) {
