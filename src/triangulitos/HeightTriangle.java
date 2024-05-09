@@ -3,8 +3,10 @@
  */
 package triangulitos;
 
+import exceptions.InvalidHeightException;
+
 /**
- * Base of all the triangle with height
+ * The class HeightTriangle is a subclass of Triangle. It is the base of all the triangle with height
  */
 public abstract class HeightTriangle extends Triangle {
 
@@ -19,6 +21,9 @@ public abstract class HeightTriangle extends Triangle {
 	 */
 	public HeightTriangle(double baseSide, double side2, double side3, double height) throws Exception {
 		super(baseSide, side2, side3);
+		if (height <= 0) {
+			throw new InvalidHeightException("The height has to be haigher than 0. Height: " + height);
+		}
 		this.height = height;
 	}
 
