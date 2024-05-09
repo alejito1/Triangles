@@ -1,27 +1,23 @@
 package triangulitos;
 
-public class Right extends Angles {
+/**
+ * Triangle with a right angle and an hypotenuse
+ */
+public class Right extends HeightTriangle {
 
-	public Right(double angle1, double angle2, double angle3) {
-		super(angle1, angle2, angle3);
+	/**
+	 * Create an instance of a right triangle
+	 * @param side1
+	 * @param side2
+	 * @param hypotenuse
+	 * @throws Exception
+	 */
+	public Right(double side1, double side2, double hypotenuse) throws Exception {
+		super(side1, side2, hypotenuse, side1);
 	}
+	@Override
 	public String Classify() {
-		if (angle1==90 && angle2 !=90 && angle3!=90) {
-			return "Triangle is a Right triangle";
-		}
-		else {
-			if (angle2==90 && angle1!=90 && angle3!=90) {
-				return "Triangle is a right triangle";
-			}
-			else {
-				if (angle3==90 && angle2!=90 && angle1!=90) {
-					return "Triangle is a right Triangle";
-				}
-				else {
-					return "Triangle is not a right triangle";
-				}
-			}
-		}
+		return "Triangle is a Right triangle";
 	}
 	@Override
 	public String toString() {

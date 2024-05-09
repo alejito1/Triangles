@@ -3,8 +3,7 @@ package triangulitos;
 /**
  * A triangle with all the sides equals
  */
-public class Equilateral extends Triangle{
-	private double height;
+public class Equilateral extends HeightTriangle{
 	/**
 	 * Constructor
 	 * @param side > 0
@@ -12,8 +11,7 @@ public class Equilateral extends Triangle{
 	 * @throws Exception
 	 */
 	public Equilateral(double side, double height) throws Exception{
-		super(side, side, side);
-		this.height = height;
+		super(side, side, side, height);
 	}
 	@Override
 	public String Classify() {
@@ -25,10 +23,6 @@ public class Equilateral extends Triangle{
 	@Override
 	public String toString() {
 		return Classify();
-	}
-	@Override
-	public double calculateArea(){
-		return (side1*height)/2;
 	}
 	
 }

@@ -2,9 +2,8 @@ package triangulitos;
 /**
  * A triangle with two equals sides
  */
-public class Isosceles extends Triangle {
-	private double height;
-	private double base;
+public class Isosceles extends HeightTriangle {
+
 	/**
 	 * Constructor
 	 * @param side1 > 0
@@ -13,15 +12,13 @@ public class Isosceles extends Triangle {
 	 * @param height > 0
 	 * @throws Exception
 	 */
-	public Isosceles(double side1, double side2, double base, double height ) throws Exception {
-		super(side1, side2, base);	
-		this.height = height;
-		this.base = base;
+	public Isosceles(double baseSide, double equalSides, double height) throws Exception {
+		super(baseSide, equalSides, equalSides, height);	
 	}
 	
 	@Override
 	public String Classify() {
-		if (side1==side2 || side2==side3 || side1==base) {
+		if (side2==side3) {
 			return "Triangle is isosceles";
 		}
 		else {
@@ -32,9 +29,6 @@ public class Isosceles extends Triangle {
 	public String toString() {
 		return Classify();
 	}
-	@Override
-	public double calculateArea(){
-		return (base*height)/2;
-	}
+
 	
 }
