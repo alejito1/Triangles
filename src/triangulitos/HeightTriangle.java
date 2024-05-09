@@ -22,7 +22,7 @@ public abstract class HeightTriangle extends Triangle {
 	public HeightTriangle(double baseSide, double side2, double side3, double height) throws Exception {
 		super(baseSide, side2, side3);
 		if (height <= 0) {
-			throw new InvalidHeightException("The height has to be haigher than 0. Height: " + height);
+			throw new InvalidHeightException("The height has to be higher than 0. Height: " + height);
 		}
 		this.height = height;
 	}
