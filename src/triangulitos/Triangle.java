@@ -2,6 +2,7 @@ package triangulitos;
 
 import exceptions.InvalidTriangleException;
 import exceptions.ScaleException;
+import exceptions.SideException;
 import interfaces.Shape;
 
 /**
@@ -10,7 +11,7 @@ import interfaces.Shape;
 public abstract class Triangle implements Shape {
 	protected double side1,side2,side3;
 	/**
-	 * 
+	 * Create an instance of Triangle
 	 * @param side1 > 0
 	 * @param side2 > 0
 	 * @param side3 > 0
@@ -20,6 +21,9 @@ public abstract class Triangle implements Shape {
 		if (side1 + side2 <= side3 || side1 + side3 <= side2 || side2 + side3 <= side1) {
 			throw new InvalidTriangleException("Invalid triangle exception");
 		}
+		if (side1<=0 || side2<=0 || side3<=0) {
+    		throw new SideException("Edges have to be higher than 0!");
+    	}
 		this.side1=side1;
 		this.side2=side2;
 		this.side3=side3;
