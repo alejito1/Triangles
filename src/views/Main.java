@@ -1,6 +1,7 @@
 package views;
 import cuadrilaterals.*;
 import exceptions.InvalidQuadrilateralException;
+import exceptions.SideException;
 import triangulitos.*;
 public class Main {
     public static void main(String[] args) {
@@ -21,8 +22,10 @@ public class Main {
             };
             quadrilateral.validateQuadrilateralInequality();
             System.out.println("Quadrilateral satisfies the inequality theorem.");
-        } catch (InvalidQuadrilateralException e) {
+        } catch (InvalidQuadrilateralException e)  {
             System.out.println(e.getMessage());
+        } catch (SideException e) {
+        	System.out.println(e.getMessage());
         }
     }
     

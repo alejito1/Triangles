@@ -1,11 +1,14 @@
 package cuadrilaterals;
 
+import exceptions.InvalidQuadrilateralException;
+import exceptions.SideException;
+
 public class Parallelogram extends Quadrilateral{
 
     protected double height ;
     protected double base ;
 
-    public Parallelogram(double longSide,  double shortSide, double height) {
+    public Parallelogram(double longSide,  double shortSide, double height) throws InvalidQuadrilateralException, SideException {
         super (longSide, shortSide,longSide, shortSide );
         this.height = height;
         this.base = longSide;

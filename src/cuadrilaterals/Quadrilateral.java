@@ -7,7 +7,11 @@ import exceptions.*;
 public abstract class Quadrilateral implements Shape, Comparable<Quadrilateral>{
     protected double edge1, edge2, edge3, edge4;
 
-    public Quadrilateral(double edge1, double edge2, double edge3, double edge4){
+    public Quadrilateral(double edge1, double edge2, double edge3, double edge4) throws InvalidQuadrilateralException, SideException{
+    	validateQuadrilateralInequality();
+    	if (edge1<=0 || edge2<=0 || edge3<=0 || edge4<=0) {
+    		throw new SideException("Edges have to be higher than 0!");
+    	}
         this.edge1 = edge1;
         this.edge2 = edge2;
         this.edge3 = edge3;
