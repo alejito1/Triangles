@@ -1,10 +1,11 @@
 package triangulitos;
-
+/**
+ * Irregular triangle
+ */
 public class Scalene extends Triangle {
-	private double base;
-	private double height;
+	private double semiPerimeter;
 	/**
-	 * Constructor
+	 * Create an instance of a triangle scalene
 	 * @param height
 	 * @param base
 	 * @param side2
@@ -12,8 +13,7 @@ public class Scalene extends Triangle {
 	 */
 	public Scalene(double height, double base, double side2) throws Exception {
 		super(base, side2, height);
-		this.base=base;
-		this.height = height;
+		semiPerimeter = (side1 + side2 + side3)/2;
 	}
 	@Override
 	public String Classify() {
@@ -30,7 +30,7 @@ public class Scalene extends Triangle {
 	}
 	@Override
 	public double calculateArea(){
-		return (base*height)/2; // Esto esta mal
+		return Math.sqrt(semiPerimeter*(semiPerimeter - side1)*(semiPerimeter - side2)*(semiPerimeter - side3));
 
 	} 
 
